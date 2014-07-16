@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=1024, user-scalable=no">
+
+    <title>Your deck.js Presentation</title>
+
+    <!-- Required stylesheet -->
+    <link rel="stylesheet" media="screen" href="../../core/deck.core.css">
+
+    <!-- Extension CSS files go here. Remove or add as needed. -->
+    <link rel="stylesheet" media="screen" href="../../extensions/goto/deck.goto.css">
+    <link rel="stylesheet" media="screen" href="../../extensions/menu/deck.menu.css">
+    <link rel="stylesheet" media="screen" href="../../extensions/navigation/deck.navigation.css">
+    <link rel="stylesheet" media="screen" href="../../extensions/status/deck.status.css">
+    <link rel="stylesheet" media="screen" href="../../extensions/scale/deck.scale.css">
+    <link rel="stylesheet" href="../../extensions/coderdeck/coderdeck-core.min.css" type="text/css">
+    <style>
+        .table-conf td {
+            padding: 10px;
+        }
+    </style>
+    <!--<link rel="stylesheet" id='style-theme-link' href="../../extensions/coderdeck/coderdeck.css" type="text/css" >-->
+
+    <!-- Style theme. More available in /themes/style/ or create your own. -->
+    <link rel="stylesheet" media="screen" href="../../themes/style/web-2.0.css">
+
+    <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+    <link rel="stylesheet" media="screen" href="../../themes/transition/horizontal-slide.css">
+
+    <!-- Basic black and white print styles -->
+    <link rel="stylesheet" media="print" href="../../core/print.css">
+
+    <!-- Required Modernizr file -->
+    <script src="../../modernizr.custom.js"></script>
+</head>
+<body>
+<div class="deck-container">
+
+    <!-- Begin slides. Just make elements with a class of slide. -->
+
+    <section class="slide">
+        <h1>
+            Zend Framework 2 :<br />
+            <span style="font-size: smaller;">вступление в SOA и EDA, <br />конфигурация приложения</span>
+        </h1>
+    </section>
+
+    <section class="slide">
+        <h2>Кратко о Zend Framework 2 ( ZF2 )</h2>
+        <ol>
+            <li>Стандарт кодирования внутри ZF2: PSR-2</li>
+            <li>Кратко о стандартах кодирования PSR ( PHP Specification Request ):
+                <ol>
+                    <li>PSR-0: Определяется взаимодействие между PHP namespaces и организацию PHP файлов в файловой системе для реализации автолоад классов</li>
+                    <li>PSR-1 / PSR-1 basic: Новый общий стандарт кодирования</li>
+                    <li>PSR-2: Расширение PSR-1</li>
+                    <li>PSR-3: Интерфейс для библиотек логирования</li>
+                    <li>PSR-4: Усовершенствованный автолоад классов</li>
+                </ol>
+            </li>
+            <li>Семейство стандартов кодирования: <a href="http://habrahabr.ru/post/38214/">~</a>
+                <ol>
+                    <li><a href="http://pear.php.net/manual/en/standards.php">PEAR Coding Standards</a></li>
+                    <li><a href="http://framework.zend.com/manual/en/coding-standard.html">Zend Framework Coding Standard</a></li>
+                    <li><a href="http://trac.symfony-project.org/wiki/HowToContributeToSymfony#CodingStandards">Symfony Coding Standards</a></li>
+                    <li><a href="http://trac.cakephp.org/wiki/Developement/CodingStandards">Cake PHP Coding Standards</a></li>
+                    <li><a href="http://www.dagbladet.no/development/phpcodingstandard/">DB Medialab PHP Coding Standard</a></li>
+                    <li><a href="http://evolt.org/node/60247/">PHP Coding Guidelines</a></li>
+                    <li><a href="http://gforge.org/docman/view.php/1/2/coding-standards.html">GForge: PHP Coding Standards</a></li>
+                    <li><a href="http://www.php-fig.org/">PSR: PHP Specification Request</a></li>
+                </ol>
+            </li>
+        </ol>
+    </section>
+
+    <section class="slide">
+        <h2>Особенности в ZF2</h2>
+        <ol>
+            <li>Система контроля версий: Zend Framework 1 - SVN, ZF2 - GitHub</li>
+            <li>Модульная система
+                <ol>
+                    <li>Технология единого входа (Single Sign-On) <a href="http://ru.wikipedia.org/wiki/Технология_единого_входа">~</a> — технология, при использовании которой пользователь переходит из одного раздела портала в другой без повторной аутентификации.</li>
+                    <li>Интеграция приложений предприятия (Enterprise Application Integration, EAI) <a href="http://ru.wikipedia.org/wiki/Интеграция_приложений_предприятия">~</a> — это технологии и приложения, задача которых вовлечь несколько приложений, используемых в одной организации, в единый процесс и осуществлять преобразование форматов данных между ними.</li>
+                    <li>Сервис-ориентированная архитектура (SOA, англ. service-oriented architecture) <a href="http://ru.wikipedia.org/wiki/Сервис-ориентированная_архитектура">~</a> — модульный подход к разработке программного обеспечения, основанный на использовании распределённых, слабо связанных (англ. loose coupling) заменяемых компонентов, оснащённых стандартизированными интерфейсами для взаимодействия по стандартизированным протоколам (SOAP, XML, REST, RPC, DCOM, CORBA и т.д.).</li>
+                </ol>
+            </li>
+            <li>Событийно-ориентированная архитектура (Event-driven architecture — EDA) <a href="http://ru.wikipedia.org/wiki/Событийно-ориентированная архитектура">~</a></li>
+            <li>Паттерн MVC</li>
+        </ol>
+    </section>
+
+    <section class="slide">
+        <h2>Событийно-ориентированная архитектура <br />(Event-driven architecture — EDA) <a href="http://ru.wikipedia.org/wiki/Событийно-ориентированная архитектура">~</a></h2>
+        <h3>Архитектура, управляемая событиями</h3>
+        <ol>
+            <li>Агент -> Событие -> Сток -> Реакция (полная или не полная)</li>
+            <ol>
+                <li>Событие - это изменение состояния чего-либо</li>
+                <li>Система, управляемая событиями, обычно содержит <span style="font-weight: bold;">источники событий (или агентов)</span> и <span style="font-weight: bold;">потребителей событий (или стоков)</span>.</li>
+                <li>Стоки ответственны за ответную реакцию, как только событие возникло.</li>
+                <li>Реакция может полностью или не полностью создаваться стоком. Сток может отвечать лишь за фильтрацию, преобразование и доставку события другому компоненту, либо он может создать собственную реакцию на это событие.</li>
+            </ol>
+            <li>Системы, управляемые событиями, по структуре более ориентированы на непредсказуемые и асинхронные окружения.</li>
+            <li>Таким образом, приложения можно сконструировать с хорошей масштабируемостью и интерактивностью, но теряем в прозрачности.</li>
+            <li>Соответствует сервис-ориентированной архитектуре (SOA), поскольку сервисы могут активироваться триггерами, срабатывающими от входящих событий</li>
+            <li>Как следствие, получаем Сервис-ориентированую архитектуру, управляемую событиями (SOA и EDA)</li>
+        </ol>
+    </section>
+
+    <section class="slide">
+        <h2>Шаблоны проектирования архитектуры программного обеспечения <a href="http://ru.wikipedia.org/wiki/Архитектура_программного_обеспечения">~</a> (Architectural patterns <a href="http://en.wikipedia.org/wiki/Architectural_pattern_(computer_science)">~</a>)</h2>
+        <ol>
+            <li>Blackboard</li>
+            <li>Клиент-серверная модель (client-server)</li>
+            <li>Архитектуры, построенные вокруг базы данных (database-centric architecture)</li>
+            <li>Распределенные вычисления (distributed computing)</li>
+            <li>Событийная архитектура (event-driven architecture)</li>
+            <li>Front end and back end</li>
+            <li>Неявные вызовы (implicit invocations)</li>
+            <li>Монолитное приложение (monolithic application)</li>
+            <li>Peer-to-peer</li>
+            <li>Пайпы и фильтры (pipes and filters)</li>
+            <li>Plugin</li>
+            <li>Representational State Transfer</li>
+            <li>Rule evaluation</li>
+            <li>Поиск-ориентированная архитектура</li>
+            <li style="font-weight: bold;">Сервис-ориентированная архитектура</li>
+            <li>Shared nothing architecture</li>
+            <li>Software componentry</li>
+            <li>Space based architecture</li>
+            <li>Структурированная</li>
+            <li>Трех-уровневая</li>
+        </ol>
+    </section>
+
+    <section class="slide">
+        <h2>Компоненты ZF2:</h2>
+        <ol>
+            <li><span style="font-weight: bold;">Authentication</span> : Serves to implement a “Login” function, in which the server checks whether or not a user really is the person whom he claims to be (for example, because he knows the secret password).</li>
+            <li><span style="font-weight: bold;">Barcode</span> : Library for generating barcodes.</li>
+            <li><span style="font-weight: bold;">Cache & Memory</span> : Generic implementation of a caching systems under consideration of different “Backends”, for example “Memcached” or “APC”.</li>
+            <li><span style="font-weight: bold;">Captcha</span> : Generation of CAPTCHAs15, for example for use in web forms.</li>
+            <li><span style="font-weight: bold;">Code</span> : Tools for the automatic generation of code.</li>
+            <li><span style="font-weight: bold;">Config</span> : Aid which handles reading and writing of application configurations in different formats, for example YAML or XML.</li>
+            <li><span style="font-weight: bold;">Console</span> : Library for using application functionality, for example controllers, via a shell (instead of on the basis of a HTTP requests by a browser).</li>
+            <li><span style="font-weight: bold;">Crypt</span> : Functions that handle encryption.</li>
+            <li><span style="font-weight: bold;">Db</span> : Library for work with databases (but not an ORM system).</li>
+            <li><span style="font-weight: bold;">Di</span> : Implementation of a Dependency Injection (DI) Container.</li>
+            <li><span style="font-weight: bold;">Dom</span> : Library for server-side work with the DOM.</li>
+            <li><span style="font-weight: bold;">Escaper</span> : Aid for output escaping.</li>
+            <li><span style="font-weight: bold;">Feed</span> : Generation of RSS and atom feeds.</li>
+            <li><span style="font-weight: bold;">File</span> : Aid for working with files.</li>
+            <li><span style="font-weight: bold;">Filter</span> : Functions for filtering data, for example given by a web form.</li>
+            <li><span style="font-weight: bold;">Form</span> : Library for the PHP based object-oriented generation of HTML web forms in conjunction with “Validators” and “Filters”.</li>
+            <li><span style="font-weight: bold;">Http</span> : Aid for dealing with HTTP.</li>
+        </ol>
+    </section>
+
+    <section class="slide">
+        <h2>Компоненты ZF2: (окончание)</h2>
+        <ol>
+            <li><span style="font-weight: bold;">I18n</span> : Extensive library for the internationalisation of applications, e.g. the output of translated contents.</li>
+            <li><span style="font-weight: bold;">InputFilter</span> : Allows the use of filters and validators on received data.</li>
+            <li><span style="font-weight: bold;">Json</span> : Tools for the serialisation and deserialisation of JSON data structures.</li>
+            <li><span style="font-weight: bold;">Ldap</span> : Library for dealing with LDAP systems, for example in conjunction with Authentication .</li>
+            <li><span style="font-weight: bold;">Loader</span> : Autoloading functions for PHP classes as well as for loading MVC modules.</li>
+            <li><span style="font-weight: bold;">Log</span> : Implementation of a generic logging functionality with support of different types of “Logging Backends”.</li>
+            <li><span style="font-weight: bold;">Mail & Mime</span> : Library for sending (multipart-)emails.</li>
+            <li><span style="font-weight: bold;">Math</span> : Diverse mathematical aids.</li>
+            <li><span style="font-weight: bold;">Navigation</span> : Generation and outputting of web site navigations.</li>
+            <li><span style="font-weight: bold;">Paginator</span> : Generation and outputting of “Sheet Navigations”, for example in results lists.</li>
+            <li><span style="font-weight: bold;">Permissions</span> : Library for rights and role systems.</li>
+            <li><span style="font-weight: bold;">ProgressBar</span> : Generation and presentation of progress bars (among others also on the command line)</li>
+            <li><span style="font-weight: bold;">Serializer</span> : Tools for the serialisation and deserialisation of objects, for example for long-term storage.</li>
+            <li><span style="font-weight: bold;">Server , Soap & XmlRpc</span> : Libraries for providing web services, e.g. on the basis of SOAP or XML-RPC. Part of Soap is also a helpful SOAP Client implementation.</li>
+            <li><span style="font-weight: bold;">Session</span> : Administration of user sessions.</li>
+            <li><span style="font-weight: bold;">Stdlib</span> : Diverse standard functions and objects, for example the implementation of a “User-land PriorityQueue”, which, e.g., is used by the EventManager .</li>
+            <li><span style="font-weight: bold;">Tag</span> : Functions for the administration of “Tags” and the generation, for example, of “Tag Clouds” on a website.</li>
+        </ol>
+    </section>
+
+    <section class="slide">
+        <h2>Жизненный цикл приложения в картинке :)</h2>
+        <img src="img/getting-started-with-zend-studio.process.png">
+    </section>
+
+    <section class="slide">
+        <h2>Последовательность конфигурации приложения</h2>
+        <ol>
+            <li> <span style="font-weight: bold;">public/index.php</span>
+                <pre class='prettyprint'>
+// Setup autoloading
+require 'init_autoloader.php';
+
+// Run the application!
+\Zend\Mvc\Application::init(require 'config/application.config.php')->run();
+                </pre>
+            </li>
+            <li> <span style="font-weight: bolder;">Zend/Mvc/Application.php</span>
+                <pre>
+public static function init($configuration = array())
+    {
+        $smConfig = isset($configuration['service_manager']) ? $configuration['service_manager'] : array();
+        $listeners = isset($configuration['listeners']) ? $configuration['listeners'] : array();
+
+        $serviceManager = new ServiceManager(new Service\ServiceManagerConfig($smConfig));
+
+        $serviceManager->setService('ApplicationConfig', $configuration);
+
+        $serviceManager->get('ModuleManager')->loadModules();
+
+        return $serviceManager->get('Application')->bootstrap($listeners);
+    }
+                </pre>
+            </li>
+            <li>Модули загружаются в порядке их перечисления в конфигурационном файле application.config.php. <br />Каждый модуль выполняет следующие шаги:
+                <ul>
+                    <li>Конфигурация автолоада.</li>
+                    <li>Загрузка конфигурации модуля.</li>
+                    <li>Регистрация event listeners.</li>
+                    <li>Конфигурация Service Manager.</li>
+                </ul>
+            </li>
+        </ol>
+    </section>
+
+    <section class="slide">
+        <h2>Последовательность конфигурации приложения (продолжение)</h2>
+        <ol>
+            <li>application.config.php</li>
+            <li>в каждом модуле
+                <ul>
+                    <li>Module.php</li>
+                    <li>config/module.config.php</li>
+                </ul>
+            </li>
+            <li>В директории autoload
+                <ul>
+                    <li>global.php</li>
+                    <li>*.global.php</li>
+                    <li>local.php</li>
+                    <li>*.local.php</li>
+                </ul>
+            </li>
+            <li>Привязка к окружению
+                application.config.php
+                <pre>
+const ENV_PROD = 'production';
+const ENV_DEV = 'development';
+
+$env = getenv('APPLICATION_ENV') ?: ENV_DEV;
+define('APPLICATION_ENV', $env);
+
+return array(
+    'module_listener_options' => array(
+        'config_glob_paths' => array(
+            sprintf('config/autoload/{,*.}{global,%s,local}.php', $env),
+        ),
+    ),
+),
+                </pre>
+            </li>
+
+        </ol>
+    </section>
+
+    <section class="slide">
+        <h2>Последовательность конфигурации приложения (продолжение)</h2>
+        <ul>
+            <li>Тогда конфигурационные файлы из директории autoload
+                <pre>
+    config/
+    autoload/
+        global.php
+        local.php
+        users.development.php
+        users.testing.php
+        users.local.php
+                </pre>
+            </li>
+            <li>будут подгружены только в соответствии с окружением и в следующем порядке
+                <pre>
+    global.php
+    users.testing.php
+    local.php
+    users.local.php
+                </pre>
+            </li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Последовательность конфигурации приложения (продолжение)</h2>
+        <ol><span style="font-weight: bold;">Конфигурация внутри модуля</span>
+            <li>конфигурации, возвращаемые множеством методов, которые конфигурируют сервисы по отдельности</li>
+            <li>конфигурации, возвращаемые методом getConfig(), который имеет по-умолчанию следующую реализацию
+                <pre style="margin-top: 20px;">
+    public function getConfig()
+    {
+        return include __DIR__ . '/config/module.config.php';
+    }
+                </pre>
+            </li>
+        </ol>
+        <ul>
+            <li>Конфигурации, возвращаемые этим множеством методов конфигурации сервисов - не кешируется. Это бывает полезно.</li>
+            <li>В то время, как общие конфигурации getConfig(), они же module.config.php - кешируются.</li>
+            <li>В официальной документации советуют использовать методы конфигурации сервисов, когда есть необходимость определить замыкание (определяем анонимную функцию) или коллбек для factories, abstract factories, and initializers. Это позволяет решить проблему кеширования и записать конфигурационные файлы в других форматах разметки. <a href="http://framework.zend.com/manual/2.3/en/tutorials/config.advanced.html">~</a></li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Последовательность конфигурации приложения (окончание)</h2>
+        <h4>Таблица соотношения конфигурационных сервисов</h4>
+        <table class="table-conf">
+            <tr>
+                <th>Manager name</th><th>Interface name</th><th>Module Method name</th><th>Config key name</th>
+            </tr>
+            <tr>
+                <td>ControllerPluginManager</td><td>ControllerPluginProviderInterface</td><td>getControllerPluginConfig()</td><td>controller_plugins</td>
+            </tr>
+            <tr>
+                <td>ControllerManager</td><td>ControllerProviderInterface</td><td>getControllerConfig()</td><td>controllers</td>
+            </tr>
+            <tr>
+                <td>FilterManager</td><td>FilterProviderInterface</td><td>getFilterConfig()</td><td>filters</td>
+            </tr>
+            <tr>
+                <td>FormElementManager</td><td>FormElementProviderInterface</td><td>getFormElementConfig()</td><td>form_elements</td>
+            </tr>
+            <tr>
+                <td>HydratorManager</td><td>HydratorProviderInterface</td><td>getHydratorConfig()</td><td>hydrators</td>
+            </tr>
+            <tr>
+                <td>InputFilterManager</td><td>InputFilterProviderInterface</td><td>getInputFilterConfig()</td><td>input_filters</td>
+            </tr>
+            <tr>
+                <td>RoutePluginManager</td><td>RouteProviderInterface</td><td>getRouteConfig()</td><td>route_manager</td>
+            </tr>
+            <tr>
+                <td>SerializerAdapterManager</td><td>SerializerProviderInterface</td><td>getSerializerConfig()</td><td>serializers</td>
+            </tr>
+            <tr>
+                <td>ServiceLocator</td><td>ServiceProviderInterface</td><td>getServiceConfig()</td><td>service_manager</td>
+            </tr>
+            <tr>
+                <td>ValidatorManager</td><td>ValidatorProviderInterface</td><td>getValidatorConfig()</td><td>validators</td>
+            </tr>
+            <tr>
+                <td>ViewHelperManager</td><td>ViewHelperProviderInterface</td><td>getViewHelperConfig()</td><td>view_helpers</td>
+            </tr>
+            <tr>
+                <td>LogProcessorManager</td><td>LogProcessorProviderInterface</td><td>getLogProcessorConfig</td><td>log_processors</td>
+            </tr>
+            <tr>
+                <td>LogWriterManager</td><td>LogWriterProviderInterface</td><td>getLogWriterConfig</td><td>log_writers</td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="slide">
+        <h2>SOA и EDA</h2>
+        <ul>
+            <li>Service Manager и Event Manager являются ключевыми фичами ZF2. <a href="http://framework.zend.com/manual/2.3/en/getting-started-with-zend-studio/skeleton-application.html#dispatching">~</a></a></li>
+            <li>Zend\ServiceManager позволяет разъединить инстанцирование и конфигурацию класса и зависимости от месторазмещения классов. Это ничто иное как Dependency Injection и активно используется в ZF2.</li>
+            <li>Zend\EventManager является реализацией паттерна Наблюдатель. Каждый ключевой процесс в цикле диспетчеризации является событием :). Это означает, что можно на конкретный event написать listener, который может изменить последовательность операций в приложении или реализовать дополнительный процесс.</li>
+            <li>После того, как все модули были загружены, запускается приложение. Происходит последовательность событий:
+                <ul>
+                    <li>route event - срабатывает для определения controller action на основе URL request</li>
+                    <li>dispatch event - запускает этот action метод</li>
+                    <li>render event - срабатывает, если требуется HTML view</li>
+                    <li>finish event - срабатывает и происходит отправка ответа обратно пользователю</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+
+    <section class="slide">
+        <h1>Ваши вопросы</h1>
+    </section>
+
+    <!-- End slides. -->
+
+    <!-- Begin extension snippets. Add or remove as needed. -->
+
+    <!-- deck.navigation snippet -->
+    <div aria-role="navigation">
+        <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+        <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+    </div>
+
+    <!-- deck.status snippet -->
+    <p class="deck-status" aria-role="status">
+        <span class="deck-status-current"></span>
+        /
+        <span class="deck-status-total"></span>
+    </p>
+
+    <!-- deck.goto snippet -->
+    <form action="." method="get" class="goto-form">
+        <label for="goto-slide">Go to slide:</label>
+        <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+        <datalist id="goto-datalist"></datalist>
+        <input type="submit" value="Go">
+    </form>
+
+    <!-- End extension snippets. -->
+</div>
+
+<!-- Required JS files. -->
+<script src="../../jquery.min.js"></script>
+<script src="../../core/deck.core.js"></script>
+
+<!-- Extension JS files. Add or remove as needed. -->
+<script src="../../extensions/menu/deck.menu.js"></script>
+<script src="../../extensions/goto/deck.goto.js"></script>
+<script src="../../extensions/status/deck.status.js"></script>
+<script src="../../extensions/navigation/deck.navigation.js"></script>
+<script src="../../extensions/scale/deck.scale.js"></script>
+<!--<script src='../../extensions/coderdeck/coderdeck.min.js'></script>-->
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+    $(function () {
+        $.deck('.slide');
+    });
+</script>
+</body>
+</html>
